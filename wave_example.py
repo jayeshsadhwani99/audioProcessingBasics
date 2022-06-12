@@ -7,7 +7,7 @@ import wave
 # - number of frames
 # - values of each frame
 
-obj = wave.open("test.wav", "r")
+obj = wave.open("test.wav", "rb")
 
 obj_channels = obj.getnchannels()
 obj_width = obj.getsampwidth()
@@ -20,9 +20,9 @@ print("Number of frames: ", obj.getnframes())
 print("All parameters", obj.getparams())
 
 time_audio = obj.getnframes() / obj.getframerate()
-print("Time of audio", time_audio);
+print("Time of audio", time_audio)
 
-frames = obj.readframes(-1);
+frames = obj.readframes(-1)
 print(type(frames), type(frames[0]))
 
 # These are 4 times as that of number of frames,
